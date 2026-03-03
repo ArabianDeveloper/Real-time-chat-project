@@ -47,19 +47,132 @@ body {
     border-radius: 4px;
 }
 
-#input-area button {
-    margin-left: 10px;
+.btn {
+    margin: 10px;
     padding: 10px 20px;
     border: none;
-    background-color: #007bff;
-    color: #fff;
     border-radius: 4px;
     cursor: pointer;
+    color: white;
+    background-color: #007bff;
 }
 
-#input-area button:disabled {
+#send-btn:disabled {
     background-color: #999;
     cursor: default;
+}
+
+.logout-btn{
+    color: white;
+    background-color: #d9534f;
+}
+
+#send-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Background styling to make the card stand out */
+body {
+    background-color: #f0f2f5;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen height */
+}
+
+.login-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-card h2 {
+    margin-bottom: 8px;
+    color: #1c1e21;
+    font-size: 24px;
+}
+
+.login-card p {
+    color: #65676b;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #4b4f56;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #dddfe2;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box; /* Prevents input from overflowing */
+    transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #0084ff;
+    box-shadow: 0 0 0 2px rgba(0, 132, 255, 0.1);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #0084ff; /* Matches your 'Sent' bubble color */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.login-btn:hover {
+    background-color: #0073e6;
+}
+
+.card-footer {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #65676b;
+}
+
+.card-footer a {
+    color: #0084ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.card-footer a:hover {
+    text-decoration: underline;
 }
 
 .message {
@@ -112,4 +225,15 @@ body {
 
 .received .timestamp {
     color: #888;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #333;
+    color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }

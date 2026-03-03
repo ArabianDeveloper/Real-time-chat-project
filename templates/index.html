@@ -10,12 +10,27 @@
 </head>
 <body>
     <div id="chat-container">
+        <div class="chat-header">
+            <h2>Real-Time Chat</h2>
+            {% if request.user.is_authenticated %}
+                <div class="user-info">
+                    Logged in as: <strong>{{ request.user.username }}</strong>
+                </div>
+                <div class="btn logout-btn">
+                    <a href="">Logout</a>
+                </div>
+            {% else %}
+                <div class="btn">
+                    <a href="{% url 'login' %}">Login</a>
+                </div>
+            {% endif %}
+        </div>
         <div id="messages"></div>
         <div id="input-area">
             <form id="chat-form" action="#" method="post">
                 {% csrf_token %}
                 <input type="text" id="message-input" name="message" placeholder="Type your message..." autocomplete="off" />
-                <button id="send-btn" type="submit" disabled>Send</button>
+                <button class="btn" id="send-btn" type="submit" disabled>Send</button>
             </form>
         </div>
     </div>

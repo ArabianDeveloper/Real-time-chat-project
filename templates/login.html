@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Real-Time Chat</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <h2>Welcome Back</h2>
+            <p>Login to start chatting</p>
+
+            <form method="POST">
+                {% csrf_token %}
+                <div class="input-group">
+                    <label for="id_username">Username</label>
+                    <input type="text" name="username" id="id_username" placeholder="Enter your username" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="id_password">Password</label>
+                    <input type="password" name="password" id="id_password" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+
+            <div class="card-footer">
+                <span>Don't have an account? <a href="/signup">Sign Up</a></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
