@@ -12,12 +12,19 @@
     <div id="chat-container">
         <div id="messages"></div>
         <div id="input-area">
-            <input type="text" id="message-input" placeholder="Type your message..." autocomplete="off" />
-            <button id="send-btn" disabled>Send</button>
+            <form id="chat-form" action="#" method="post">
+                {% csrf_token %}
+                <input type="text" id="message-input" name="message" placeholder="Type your message..." autocomplete="off" />
+                <button id="send-btn" type="submit" disabled>Send</button>
+            </form>
         </div>
     </div>
     
 
+<script>
+    const currentUser = "{{ request.user.username }}"; // Get the current user's username from Django context
+</script> 
 <script src="{% static 'js/app.js' %}"></script>
+
 </body>
 </html>
