@@ -68,6 +68,15 @@ function fetchMessages() {
     .catch(error => console.error('Error fetching messages:', error));
 }
 
-fetchMessages(); // Initial fetch when page loads
-// Run every 2000ms (2 seconds)
-// setInterval(fetchMessages, 2000);
+// fetchMessages();
+// Run every 2000ms (1 seconds)
+setInterval(fetchMessages, 1000);
+
+setTimeout(function() {
+    const alerts = document.querySelectorAll('.alert');
+    alerts.forEach(alert => {
+        alert.style.transition = "opacity 0.5s ease";
+        alert.style.opacity = "0";
+        setTimeout(() => alert.remove(), 500);
+    });
+}, 3000);

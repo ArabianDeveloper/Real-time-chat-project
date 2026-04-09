@@ -15,7 +15,15 @@
         <div class="login-card">
             <h2>Welcome Back</h2>
             <p>Login to start chatting</p>
-
+            {% if messages %}
+                <div class="messages-container">
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
             <form method="POST">
                 {% csrf_token %}
                 <div class="input-group">
@@ -32,7 +40,7 @@
             </form>
 
             <div class="card-footer">
-                <span>Don't have an account? <a href="/signup">Sign Up</a></span>
+                <span>Don't have an account? <a href="{% url 'signup' %}">Sign Up</a></span>
             </div>
         </div>
     </div>

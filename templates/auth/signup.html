@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - Real-Time Chat</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <h2>Create an Account</h2>
+            <p>Sign up to start chatting</p>
+
+
+            {% if messages %}
+                <div class="messages-container">
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            
+            <form method="POST">
+                {% csrf_token %}
+                <div class="input-group">
+                    <label for="id_username">Username</label>
+                    <input type="text" name="username" id="id_username" placeholder="Enter your username" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="id_password_1">Password</label>
+                    <input type="password" name="password" id="id_password_1" placeholder="••••••••" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="id_password_2">Confirm Password</label>
+                    <input type="password" name="password_2" id="id_password_2" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="login-btn">Sign Up</button>
+            </form>
+
+            <div class="card-footer">
+                <span>Already have an account? <a href="{% url 'login' %}">Login</a></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
